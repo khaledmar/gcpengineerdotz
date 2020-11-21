@@ -1,0 +1,80 @@
+pip3 install --upgrade virtualenv \
+    --user
+
+python3 -m virtualenv env
+
+source env/bin/activate
+
+pip3 install --quiet \
+    apache-beam[gcp]
+	
+gsutil mb \
+    gs://my-project-1536110405564
+
+gsutil cp gs://dotztest/srcDtFlow/load_csv.py load_csv.py
+
+python3 -m \
+    apache_beam.examples.wordcount \
+    --project \
+    my-project-1536110405564 \
+    --runner DataflowRunner \
+    --temp_location \
+    gs://dotztest/srcDtFlow \
+    --output \
+    gs://dotztest/trustzn/output \
+    --job_name dataflow-intro \
+    --region southamerica-east1
+	
+	
+gsutil cp gs://dotztest/srcDtFlow/bill_of_materials.py bill_of_materials.py
+	
+python3 bill_of_materials.py \
+    --project \
+    my-project-1536110405564 \
+    --runner DataflowRunner \
+    --temp_location \
+    gs://dotztest/srcDtFlow/temp \
+    --output \
+    gs://dotztest/trustzn/output \
+    --job_name dataflow-bill \
+    --region southamerica-east1	
+	
+	
+gsutil cp gs://dotztest/srcDtFlow/comp_boss.py comp_boss.py
+	
+python3 comp_boss.py \
+    --project \
+    my-project-1536110405564 \
+    --runner DataflowRunner \
+    --temp_location \
+    gs://dotztest/srcDtFlow/temp \
+    --output \
+    gs://dotztest/trustzn/output \
+    --job_name dataflow-comp \
+    --region southamerica-east1	
+	
+gsutil cp gs://dotztest/srcDtFlow/price_quote.py price_quote.py
+	
+python3 price_quote.py \
+    --project \
+    my-project-1536110405564 \
+    --runner DataflowRunner \
+    --temp_location \
+    gs://dotztest/srcDtFlow/temp \
+    --output \
+    gs://dotztest/trustzn/output \
+    --job_name dataflow-price \
+    --region southamerica-east1
+
+
+https://console.cloud.google.com/bigquery?project=my-project-1536110405564&j=bq:southamerica-east1:bquxjob_691c2282_175e98f2630&page=queryresults
+
+https://console.cloud.google.com/dataflow/jobs?project=my-project-1536110405564
+
+https://console.cloud.google.com/storage/browser/dotztest/srcDtFlow;tab=objects?project=my-project-1536110405564&pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false
+
+
+https://shell.cloud.google.com/?hl=en_US&fromcloudshell=true&show=terminal#id=I0_1605887523934&_gfid=I0_1605887523934&parent=https://console.cloud.google.com&pfname=&rpctoken=42295795	
+	
+
+
