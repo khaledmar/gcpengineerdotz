@@ -6,16 +6,13 @@ dados em formato CSV e apresentar visões em base estruturada.
 
 **Arquitetura**:  
 
-![](https://github.com/khaledmar/gcpengineerdotz/blob/main/mdMediaFolder/media/image1.png){width="6.167530621172354in"
-height="2.3645833333333335in"}
-
+![](https://github.com/khaledmar/gcpengineerdotz/blob/main/mdMediaFolder/media/image1.png)
 Figura 1 - imagem modificada, fonte
 https://towardsdatascience.com/apache-beam-pipeline-for-cleaning-batch-data-using-cloud-dataflow-and-bigquery-f9272cd89eba
 
 **Modelo**:
 
-![](mdMediaFolder\media\image2.emf){width="5.125in"
-height="3.5701498250218724in"}
+![](mdMediaFolder\media\image2.png)
 
 Figura 2- fonte própria
 
