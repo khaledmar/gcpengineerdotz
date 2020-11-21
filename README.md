@@ -6,7 +6,7 @@ dados em formato CSV e apresentar visões em base estruturada.
 
 **Arquitetura**:  
 
-![](mdMediaFolder\media\image1.png){width="6.167530621172354in"
+![](https://github.com/khaledmar/gcpengineerdotz/blob/main/mdMediaFolder/media/image1.png){width="6.167530621172354in"
 height="2.3645833333333335in"}
 
 Figura 1 - imagem modificada, fonte
