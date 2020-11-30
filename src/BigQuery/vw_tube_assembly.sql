@@ -1,5 +1,5 @@
 SELECT
-  GENERATE_UUID() AS cotubeuidmponentuid,
+  GENERATE_UUID() AS tubeuid,
   tube_assembly_id
 FROM (
   SELECT
